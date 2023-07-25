@@ -263,9 +263,11 @@
       const shareContact = () => {
           firstName = document.getElementById('first-name-contact').value.trim();
           lastName = document.getElementById('last-name-contact').value.trim();
+          fullName = firstName + ' ' + lastName
+          fullName = fullName.trim();
           phoneNumber= document.getElementById('phone-contact').value.trim();
           email = document.getElementById('email-contact').value.trim();
-          message = `*Hi*, %0A*${firstName} ${lastName}* is shareing his contact with you %0A*Phone Number:* ${phoneNumber} %0A*Email:* ${email}`;
+          message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${phoneNumber} %0A*Email:* ${email}`;
          
           // Encode the phone number and message for the URL.
           const encodedPhoneNumber = encodeURIComponent(phoneNumber);
