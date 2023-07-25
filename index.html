@@ -282,6 +282,7 @@
     </div>
     <script>
       const shareContact = () => {
+        // get the values that will be sent 
         firstName = document.getElementById("first-name-contact").value.trim();
         lastName = document.getElementById("last-name-contact").value.trim();
         fullName = firstName + " " + lastName;
@@ -290,10 +291,12 @@
           .getElementById("phone-contact")
           .value.trim();
         email = document.getElementById("email-contact").value.trim();
-        message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
+
 
         // Encode the phone number and message for the URL.
         recieverPhoneNumber = "=201069239449";
+        message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
+
         const encodedPhoneNumber = encodeURIComponent(recieverPhoneNumber);
         const encodedMessage = encodeURIComponent(message);
 
