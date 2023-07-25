@@ -4132,7 +4132,7 @@ button {
   justify-content: center;
   align-items: center;
   background-color: rgb(156, 156, 156);
-  display: none;
+  /* display: none; */
 }
 
 .share-contact-form {
