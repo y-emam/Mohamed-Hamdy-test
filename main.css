@@ -4119,18 +4119,25 @@ button {
   font-weight: bold;
 }
 
+#share-contact-button {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
 .share-contact-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(156, 156, 156);
+  display: none;
 }
 
 .share-contact-form {
   position: fixed;
   display: flex;
-  /* display: none; */
   background-color: rgb(156, 156, 156);
   height: 500px;
   bottom: 0%;
@@ -4152,8 +4159,12 @@ button {
 #share-contact-form-overlay {
   position: fixed;
   /* opacity: 0; */
-  width: min(440px, 100%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: max(440px, 100%);
   height: 100%;
-  
-  background-color: black;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.438);
 }

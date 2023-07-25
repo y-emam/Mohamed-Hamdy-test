@@ -244,15 +244,37 @@
               </li>
             </ul>
           </div>
+          <button id="share-contact-button">Share Contact</button>
           <div class="share-contact-container">
-            <button id="share-contact-button">Share Contact</button>
             <form class="share-contact-form">
               <h2>Share Contact</h2>
-              <input type="text" required placeholder="First Name" id="first-name-contact"/>
-              <input type="text" required placeholder="Last Name" id="last-name-contact"/>
-              <input type="text" required placeholder="Email" id="email-contact" />
-              <input type="text" required placeholder="Phone Number (+20 1** *** ****)" id="phone-contact" />
-              <button id="share-button" onclick="shareContact()">Share Contact</button>
+              <input
+                type="text"
+                required
+                placeholder="First Name"
+                id="first-name-contact"
+              />
+              <input
+                type="text"
+                required
+                placeholder="Last Name"
+                id="last-name-contact"
+              />
+              <input
+                type="text"
+                required
+                placeholder="Email"
+                id="email-contact"
+              />
+              <input
+                type="text"
+                required
+                placeholder="Phone Number (+20 1** *** ****)"
+                id="phone-contact"
+              />
+              <button id="share-button" onclick="shareContact()">
+                Share Contact
+              </button>
             </form>
             <div id="share-contact-form-overlay"></div>
           </div>
@@ -261,25 +283,27 @@
     </div>
     <script>
       const shareContact = () => {
-          firstName = document.getElementById('first-name-contact').value.trim();
-          lastName = document.getElementById('last-name-contact').value.trim();
-          fullName = firstName + ' ' + lastName
-          fullName = fullName.trim();
-          senderPhoneNumber= document.getElementById('phone-contact').value.trim();
-          email = document.getElementById('email-contact').value.trim();
-          message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
-         
-          // Encode the phone number and message for the URL.
-          recieverPhoneNumber = "=201069239449"
-          const encodedPhoneNumber = encodeURIComponent(phoneNumber);
-          const encodedMessage = encodeURIComponent(message);
+        firstName = document.getElementById("first-name-contact").value.trim();
+        lastName = document.getElementById("last-name-contact").value.trim();
+        fullName = firstName + " " + lastName;
+        fullName = fullName.trim();
+        senderPhoneNumber = document
+          .getElementById("phone-contact")
+          .value.trim();
+        email = document.getElementById("email-contact").value.trim();
+        message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
 
-          // Create the WhatsApp URL.
-          const whatsappURL = `https://wa.me/${encodedPhoneNumber}?text=${message}`;
+        // Encode the phone number and message for the URL.
+        recieverPhoneNumber = "=201069239449";
+        const encodedPhoneNumber = encodeURIComponent(phoneNumber);
+        const encodedMessage = encodeURIComponent(message);
 
-          // Open WhatsApp Web or the WhatsApp app with the pre-filled message.
-          window.open(whatsappURL);
-        }
+        // Create the WhatsApp URL.
+        const whatsappURL = `https://wa.me/${encodedPhoneNumber}?text=${message}`;
+
+        // Open WhatsApp Web or the WhatsApp app with the pre-filled message.
+        window.open(whatsappURL);
+      };
     </script>
   </body>
 </html>
