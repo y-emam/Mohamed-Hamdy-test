@@ -275,6 +275,7 @@
                 Share Contact
               </button>
             </form>
+            <!-- <div id="form-close-icon">&times;</div> -->
             <div id="share-contact-form-overlay" class="inactive" onclick="removeForm()"></div>
           </div>
         </div>
@@ -294,7 +295,7 @@
 
 
         // Encode the phone number and message for the URL.
-        recieverPhoneNumber = "+20191720988";
+        recieverPhoneNumber = "+201091720988";
         message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
 
         const encodedPhoneNumber = encodeURIComponent(recieverPhoneNumber);

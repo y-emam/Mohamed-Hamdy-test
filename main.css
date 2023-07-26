@@ -4179,6 +4179,13 @@ button {
   color: rgb(223, 223, 223);
 }
 
+#form-close-icon {
+  display: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+}
+
 #share-contact-form-overlay {
   position: fixed;
   display: block;
