@@ -244,8 +244,8 @@
               </li>
             </ul>
           </div>
-          <button id="share-contact-button">Share Contact</button>
-          <div class="share-contact-container">
+          <button id="share-contact-button" onclick="showForm()">Share Contact</button>
+          <div class="share-contact-container inactive">
             <form class="share-contact-form">
               <h2>Share Contact</h2>
               <input
@@ -275,7 +275,7 @@
                 Share Contact
               </button>
             </form>
-            <div id="share-contact-form-overlay"></div>
+            <div id="share-contact-form-overlay" class="inactive" onclick="removeForm()"></div>
           </div>
         </div>
       </div>
@@ -304,8 +304,20 @@
         const whatsappURL = `https://wa.me/${encodedPhoneNumber}?text=${message}`;
 
         // Open WhatsApp Web or the WhatsApp app with the pre-filled message.
-        window.open(whatsappURL);
+        if (firstName.trim() && lastName.trim() && senderPhoneNumber.trim()){
+          window.open(whatsappURL);
+        }
       };
+
+      const showForm = () => {
+        document.getElementsByClassName("share-contact-container")[0].classList.remove('inactive');
+        document.getElementById("share-contact-form-overlay").classList.remove('inactive');
+      }
+
+      const removeForm = () => {
+        document.getElementsByClassName("share-contact-container")[0].classList.add('inactive');
+        document.getElementById("share-contact-form-overlay").classList.add('inactive');
+      }
     </script>
   </body>
 </html>
