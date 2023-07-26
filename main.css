@@ -4142,7 +4142,7 @@ button {
 }
 
 .share-contact-container h2 {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   padding: 10px 30px;
   color: #000;
   border-bottom: white solid;
@@ -4180,10 +4180,17 @@ button {
 }
 
 #form-close-icon {
-  display: absolute;
+  position: relative;
+  display: block;
+  height: 0;
   top: 0;
   right: 0;
-  color: white;
+  color: black;
+  font-size: 50px;
+  /* box-shadow: 0 0 10px black; */
+  transform: translateX(180px);
+  cursor: pointer;
+  z-index: 10;
 }
 
 #share-contact-form-overlay {

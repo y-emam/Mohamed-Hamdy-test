@@ -244,9 +244,12 @@
               </li>
             </ul>
           </div>
-          <button id="share-contact-button" onclick="showForm()">Share Contact</button>
+          <button id="share-contact-button" onclick="showForm()">
+            Share Contact
+          </button>
           <div class="share-contact-container inactive">
             <form class="share-contact-form">
+              <div id="form-close-icon" onclick="removeForm()">&times;</div>
               <h2>Share Contact</h2>
               <input
                 type="text"
@@ -260,11 +263,7 @@
                 placeholder="Last Name"
                 id="last-name-contact"
               />
-              <input
-                type="text"
-                placeholder="Email"
-                id="email-contact"
-              />
+              <input type="text" placeholder="Email" id="email-contact" />
               <input
                 type="text"
                 required
@@ -275,15 +274,19 @@
                 Share Contact
               </button>
             </form>
-            <!-- <div id="form-close-icon">&times;</div> -->
-            <div id="share-contact-form-overlay" class="inactive" onclick="removeForm()"></div>
+
+            <div
+              id="share-contact-form-overlay"
+              class="inactive"
+              onclick="removeForm()"
+            ></div>
           </div>
         </div>
       </div>
     </div>
     <script>
       const shareContact = () => {
-        // get the values that will be sent 
+        // get the values that will be sent
         firstName = document.getElementById("first-name-contact").value.trim();
         lastName = document.getElementById("last-name-contact").value.trim();
         fullName = firstName + " " + lastName;
@@ -292,7 +295,6 @@
           .getElementById("phone-contact")
           .value.trim();
         email = document.getElementById("email-contact").value.trim();
-
 
         // Encode the phone number and message for the URL.
         recieverPhoneNumber = "+201091720988";
@@ -305,20 +307,28 @@
         const whatsappURL = `https://wa.me/${encodedPhoneNumber}?text=${message}`;
 
         // Open WhatsApp Web or the WhatsApp app with the pre-filled message.
-        if (firstName.trim() && lastName.trim() && senderPhoneNumber.trim()){
+        if (firstName.trim() && lastName.trim() && senderPhoneNumber.trim()) {
           window.open(whatsappURL);
         }
       };
 
       const showForm = () => {
-        document.getElementsByClassName("share-contact-container")[0].classList.remove('inactive');
-        document.getElementById("share-contact-form-overlay").classList.remove('inactive');
-      }
+        document
+          .getElementsByClassName("share-contact-container")[0]
+          .classList.remove("inactive");
+        document
+          .getElementById("share-contact-form-overlay")
+          .classList.remove("inactive");
+      };
 
       const removeForm = () => {
-        document.getElementsByClassName("share-contact-container")[0].classList.add('inactive');
-        document.getElementById("share-contact-form-overlay").classList.add('inactive');
-      }
+        document
+          .getElementsByClassName("share-contact-container")[0]
+          .classList.add("inactive");
+        document
+          .getElementById("share-contact-form-overlay")
+          .classList.add("inactive");
+      };
     </script>
   </body>
 </html>
