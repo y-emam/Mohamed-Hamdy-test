@@ -264,13 +264,13 @@
                 id="last-name-contact"
               />
               <input
-                type="email"
-                required
-                placeholder="Email"
-                id="email-contact"
+                type="text"
+                placeholder="Job Title"
+                id="job-title-contact"
               />
+              <input type="email" placeholder="Email" id="email-contact" />
               <input
-                type="number"
+                type="tel"
                 required
                 placeholder="Phone Number (+20 1** *** ****)"
                 id="phone-contact"
@@ -300,11 +300,19 @@
           .getElementById("phone-contact")
           .value.trim();
         email = document.getElementById("email-contact").value.trim();
+        jobTitle = document.getElementById("job-title-contact").value.trim();
 
         // Encode the phone number and message for the URL.
         recieverPhoneNumber = "+201091720988";
 
         message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
+
+        if (email.trim()) {
+          message += ` %0A*Email:* ${email}`;
+        }
+        if (jobTitle.trim()) {
+          message += ` %0A*Job Title:* ${jobTitle}`;
+        }
 
         const encodedPhoneNumber = encodeURIComponent(recieverPhoneNumber);
         const encodedMessage = encodeURIComponent(message);
