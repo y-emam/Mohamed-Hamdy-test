@@ -263,9 +263,14 @@
                 placeholder="Last Name"
                 id="last-name-contact"
               />
-              <input type="text" placeholder="Email" id="email-contact" />
               <input
-                type="text"
+                type="email"
+                required
+                placeholder="Email"
+                id="email-contact"
+              />
+              <input
+                type="number"
                 required
                 placeholder="Phone Number (+20 1** *** ****)"
                 id="phone-contact"
@@ -298,6 +303,7 @@
 
         // Encode the phone number and message for the URL.
         recieverPhoneNumber = "+201091720988";
+
         message = `*Hi*, %0A*${fullName}* is shareing his contact with you %0A*Phone Number:* ${senderPhoneNumber} %0A*Email:* ${email}`;
 
         const encodedPhoneNumber = encodeURIComponent(recieverPhoneNumber);
